@@ -1,0 +1,26 @@
+<header id="header">
+	<h1>Hello and Welcome!</h1>
+	<nav id="nav">
+		<div id="nav-div">
+            <input type="checkbox" id="hamburger-toggler" />
+            <div id="nav-background"></div>
+			<div id="hamburger">
+				<div></div>
+			</div>
+			<ul id="nav-list">
+				<li><a routerLink="vote" [ngClass]="setNavClass('vote')">Vote</a></li>
+				<li>|</li>
+				<li>
+					<a routerLink="result" [ngClass]="setNavClass('result')">Results</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a routerLink="about" [ngClass]="setNavClass('about')">About</a>
+				</li>
+			</ul>
+		</div>
+		<div id="logout-div">
+			<a routerLink=""><img src="./../assets/images/logout.png"></a>
+		</div>
+	</nav>
+</header>

@@ -1,0 +1,178 @@
+#login-page #question {
+	text-align: center;
+	padding: 10px;
+	margin: 20px auto;
+
+	color: #d4d4d4;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#login-div {
+	margin: auto;
+	
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+}
+
+.login-box {
+	margin: 3% 5px;
+	width: 300px;
+	height: 300px;
+	
+	background: #191716;
+	border: 5px solid #912f40;
+	color: #d4dbd4;
+	
+	display: grid;
+	grid-template-rows: 100px auto auto;
+	transition: box-shadow 0.1s ease-in-out, all 1s;
+}
+
+.login-box:hover {
+	box-shadow: 0 0 10px 2px #912f40;
+}
+
+.login-box > h1 {
+	text-align: center;
+	display: flex;
+
+	align-self: center;
+	justify-self: center;
+}
+
+.login-box > hr {
+	width: 85%;
+	height: 3px;
+	margin: auto;
+
+	background: #d4dbd4;
+}
+
+.button-box {
+	height: 100%;
+
+	display: flex;
+
+	align-items: flex-end;
+	justify-content: center;
+
+	padding: 20px;
+}
+
+.button-box button {
+	width: 200px;
+	height: 40px;
+
+	background: #474a48;
+	border: none;
+	color: #d4dbd4;
+	font-size: 1em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+	transition: box-shadow 0.4s linear, border 0.4s linear;
+}
+
+.button-box button:hover {
+	box-shadow: 0 0 10px 2px #912f40;
+}
+
+#login-teacher-div {
+	position: relative;
+	transition: all 1s, margin-right 0.5s 1s;
+}
+
+#login-teacher-div #border-clip {
+	width: 0px ;
+	height: 190px ;
+
+	padding: unset ;
+
+	background: #191716;
+	
+	position: absolute;
+	right: -5px;
+	top: 0;
+
+	display: block ;
+	transition: width 0.3s;
+}
+
+.login-password-div-open #login-teacher-div {
+	transition: all 1s, margin-right 0s;
+	margin-right: 0px ;
+}
+
+.login-password-div-open #login-teacher-div #border-clip{
+	width: 5px ;
+}
+
+#login-password-div {
+	width: 0px ;
+	height: 200px ;
+	
+	margin-left: 0;
+	background: #474a48;
+	border-left: none;
+	border-width: 0px ;
+	
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	
+	transition: inherit, width 1s, border 0.4s 0.6s;
+	overflow: hidden;
+}
+
+#login-page .login-password-div-open #login-password-div {
+	width: 300px ;
+	border-width: 5px;
+	transition: inherit, width 1s, border 0s;
+}
+
+#login-password-div > form {
+	grid-row: 1/2;
+	padding: 10px;
+
+	display: grid;
+	grid-template: 2em 2em 1fr / auto 2fr;
+	column-gap: 5px;
+	row-gap: 5px;
+}
+
+#login-password-div > form > label {
+	display: flex;
+	align-items: center;
+}
+
+#login-password-div > form > input {
+	height: 100%;
+
+	background: #333333;
+	color: #d4dbd4;
+
+	border-radius: 4px;
+	border: none;
+
+	padding: 10px;
+}
+
+#login-password-div > div {
+	grid-row: 2/3;
+
+	padding: 20px;
+}
+
+#login-password-div .button-box button {
+	width: 200px;
+	height: 40px;
+
+	background: #191716;
+	color: #d4dbd4;
+
+	transition: inherit, border 0.4s linear;
+}

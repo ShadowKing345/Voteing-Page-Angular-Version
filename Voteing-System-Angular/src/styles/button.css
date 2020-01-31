@@ -1,0 +1,85 @@
+:root {
+	--btn-border-size: 5px;
+	--btn-border-background-first: #474a48;
+	--btn-border-background-last: #912f40;
+	--btn-border-animation-duration: 2s;
+}
+
+.btn {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn span {
+	position: absolute;
+	animation-play-state: paused;
+}
+
+.btn span:not(:nth-child(2n)) {
+	width: 100%;
+	height: var(--btn-border-size);
+
+	animation-name: btn-animation-x;
+}
+
+.btn span:nth-child(2n) {
+	width: var(--btn-border-size);
+	height: 100%;
+
+	animation-name: btn-animation-y;
+	animation-delay: calc(var(--btn-border-animation-duration) * (1 / 2) * -1);
+}
+
+.btn span:nth-child(-n + 2) {
+	top: 0;
+	right: 0;
+}
+
+.btn span:nth-child(n + 3) {
+	left: 0;
+	bottom: 0;
+
+	animation-direction: reverse;
+}
+
+.btn:hover span {
+	animation-duration: var(--btn-border-animation-duration);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+
+.btn:hover span:nth-child(1) {
+	background: linear-gradient(to right, var(--btn-border-background-first), var(--btn-border-background-last));
+}
+
+.btn:hover span:nth-child(2) {
+	background: linear-gradient(to bottom, var(--btn-border-background-first), var(--btn-border-background-last));
+}
+
+.btn:hover span:nth-child(3) {
+	background: linear-gradient(to left, var(--btn-border-background-first), var(--btn-border-background-last));
+}
+
+.btn:hover span:nth-child(4) {
+	background: linear-gradient(to top, var(--btn-border-background-first), var(--btn-border-background-last));
+}
+
+@keyframes btn-animation-y {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes btn-animation-x {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}

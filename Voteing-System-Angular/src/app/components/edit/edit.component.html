@@ -1,0 +1,39 @@
+<div class="container-div" id="edit">
+	<form id="edit-question-form" [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+		<div class="question-title">
+			<label>Question:</label>
+			<input type="text" name="title" formControlName="title" class="text-input" />
+		</div>
+		<hr class="hr" />
+		<div class="response-list">
+			<app-edit-response-item
+				class="response-item"
+				*ngFor="let response of questionObj.response"
+				[response]="response"
+				(deleteResponse)="deleteResponse($event)"
+			>
+			</app-edit-response-item>
+		</div>
+	</form>
+	<hr class="hr" style="grid-row: 2/3;" />
+	<div id="edit-bottom-div">
+		<form id="edit-add-response-form" [formGroup]="responseCreationForm" (ngSubmit)="createResponse()">
+			<label>Response:</label>
+			<input type="text" name="title" formControlName="title" class="text-input" />
+			<button type="submit" name="submit" class="btn submit-button">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Add Response
+			</button>
+		</form>
+		<button type="submit" name="submit" class="btn submit-button" form="edit-question-form">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Submit
+		</button>
+	</div>
+</div>

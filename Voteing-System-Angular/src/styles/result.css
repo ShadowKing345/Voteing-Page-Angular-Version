@@ -1,0 +1,108 @@
+#result-graph-div {
+	position: relative;
+
+	padding: 20px 10px 30px 30px;
+}
+
+#result-graph-div #result-graph-y-lable {
+	font-size: 1em;
+	color: #d4dbd4;
+
+	position: absolute;
+	left: 3px;
+	top: 50%;
+
+	transform: translateY(-50%) translateX(-50%) rotateZ(90deg) translateY(-50%);
+}
+
+#result-graph-div #result-graph-x-lable {
+	font-size: 1em;
+	color: #d4dbd4;
+
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.result-graph-element-element div {
+	position: relative;
+	height: 40px;
+	width: 100%;
+	min-width: 1px;
+}
+
+.result-graph-element-element span {
+	margin-left: 10px;
+
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+
+	min-width: 1em;
+	max-height: 1em;
+	border-radius: 2px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.result-graph-element-element:nth-child(2n) span {
+	background: #474a4880;
+}
+
+.result-graph-element-element:not(:nth-child(2n)) span {
+	background: #2e2e2e80;
+}
+
+#result-graph-key-div {
+	padding: 20px;
+	color: #d4dbd4;
+}
+
+#result-graph-key-div h4 {
+	font-size: 1.5em;
+}
+
+.result-graph-key-item:nth-child(2n) .result-graph-key-div {
+	background: #474a48;
+}
+
+.result-graph-key-item:not(:nth-child(2n)) .result-graph-key-div {
+	background: #2e2e2e;
+}
+
+.result-graph-key-div {
+	height: 40px;
+	width: 100%;
+	margin: 5px 0;
+	padding-left: 5px;
+
+	display: flex;
+	align-items: center;
+}
+
+.result-graph-key-div #result-graph-key-div-color {
+	display: inline-block;
+
+	height: 30px;
+	width: 30px;
+
+	flex-shrink: 0;
+}
+
+.result-graph-key-div #result-graph-key-div-colon {
+	margin: 0 10px;
+}
+
+.result-graph-key-div #result-graph-key-div-title {
+	flex-basis: 100%;
+}
+
+.result-graph-key-div input {
+	width: 200px;
+	height: 40px;
+}

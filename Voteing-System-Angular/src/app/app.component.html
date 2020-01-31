@@ -1,0 +1,6 @@
+<app-alerts [alertEvents]="eventSubjust.asObservable()"></app-alerts>
+<app-header></app-header>
+<div class="container">
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+<app-fotter></app-fotter>

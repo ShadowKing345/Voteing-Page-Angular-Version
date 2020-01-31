@@ -1,0 +1,23 @@
+<div class="container-div" id="result-div">
+	<div>
+		<h2 class="question-title">{{ questionObj.title }}</h2>
+		<hr class="hr" />
+		<div id="result-graph-div" class="response-list">
+			<h6 id="result-graph-y-lable">Responses</h6>
+			<h6 id="result-graph-x-lable">Voted</h6>
+			<div>
+				<app-graph-element class="response-item result-graph-element-element" *ngFor="let key of keys" [key]="key"></app-graph-element>
+			</div>
+		</div>
+	</div>
+	<hr class="hr" />
+	<div class="response-list" id="result-graph-key-div">
+		<h4>Key:</h4>
+		<hr class="hr">
+		<div>
+			<app-graph-key *ngFor="let key of keys" [key]="key" class="result-graph-key-item"></app-graph-key>
+		</div>
+		<hr class="hr">
+		<h4>Total Votes: {{ totalVotes }}</h4>
+	</div>
+</div>

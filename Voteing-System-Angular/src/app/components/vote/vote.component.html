@@ -1,0 +1,16 @@
+<div class="container-div" id="vote-div">
+	<h3 class="question-title">{{ questionObj.title }}</h3>
+	<hr class="hr" />
+	<form class="response-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+		<div class="response-list">
+			<app-vote-response-item class="response-item" *ngFor="let response of questionObj.response" [response]="response" [parentForm]="form"> </app-vote-response-item>
+		</div>
+		<button class="submit-button btn" type="submit" id="submitButton">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Submit
+		</button>
+	</form>
+</div>

@@ -1,0 +1,32 @@
+<div id="login-page">
+	<div id="question"><h1>Are you a teacher or a student?</h1></div>
+	<hr class="hr" />
+	<div id="login-div" [ngClass]="setLoginDivClass()">
+		<div id="login-student-div" class="login-box">
+			<h1>Student</h1>
+			<hr>
+			<div class="button-box">
+				<button routerLink="vote">Am I</button>
+			</div>
+		</div>
+		<div id="login-teacher-div" class="login-box">
+			<h1>Teacher</h1>
+			<hr />
+			<div class="button-box">
+				<button (click)="toggleLoginPasswordDiv()" id="login-teacher-div-button">Am I</button>
+			</div>
+			<div id="border-clip"></div>
+		</div>
+		<div id="login-password-div" class="login-box">
+			<form id="login-password-form" (submit)="login($event)">
+				<label>Username:</label>
+				<input type="text" name="username" id="username" placeholder="Username" />
+				<label>Password:</label>
+				<input type="password" name="password" id="password" placeholder="Password" />
+			</form>
+			<div class="button-box">
+				<button type="submit" value="submit" form="login-password-form">Login</button>
+			</div>
+		</div>
+	</div>
+</div>

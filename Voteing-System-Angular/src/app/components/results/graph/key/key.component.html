@@ -1,0 +1,13 @@
+<div class="result-graph-key-div">
+	<div id="result-graph-key-div-color" [ngStyle]="setColorDivStyle(key)"></div>
+	<span id="result-graph-key-div-colon">:</span>
+	<span id="result-graph-key-div-title">{{ key.title }} | {{ key.voted }}</span>
+	<input
+		class="text-input"
+		type="text"
+		(load)="colorInputInit(colorInput)"
+		#colorInput
+		(keyup.enter)="changeColor(colorInput.value)"
+		(blur)="changeColor(colorInput.value)"
+	/>
+</div>

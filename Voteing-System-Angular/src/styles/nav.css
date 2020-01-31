@@ -1,0 +1,185 @@
+:root {
+	--nav-hamberger-width: 40px;
+	--nav-hamberger-height: 40px;
+	--nav-hamberger-padding: 5px;
+	--nav-hamberger-inner-padding: 10px;
+	--nav-hamberger-slice-size: 3px;
+	--nav-hamberger-slice-gap: 8px;
+
+	--nav-hamberger-animation: all 0.4s linear;
+	--nav-hamberger-psudo-animation: all 0.4s linear;
+
+	--nav-list-width: 200px;
+	--nav-list-height: 40px;
+	--nav-list-padding: 5px;
+	--nav-list-item-padding: 0 5px 0 5px;
+
+	--nav-background-width: calc(var(--nav-list-width) + var(--nav-list-padding) * 2 + var(--nav-hamberger-width) + var(--nav-hamberger-padding) * 2);
+	--nav-background-height: calc(var(--nav-hamberger-height) + var(--nav-hamberger-padding) * 2);
+	--nav-background: #474a48;
+	--nav-background-border-radous: 8px;
+}
+
+#nav {
+	text-align: center;
+	height: calc(var(--nav-hamberger-height) + var(--nav-hamberger-padding) * 2);
+
+	position: relative;
+}
+
+#nav-div {
+	display: inline-block;
+
+	width: auto;
+	height: var(--nav-background-height);
+
+	position: relative;
+	text-align: left;
+}
+
+#hamburger-toggler {
+	display: inline-block;
+
+	width: calc(var(--nav-hamberger-width) + var(--nav-hamberger-padding) * 2);
+	height: calc(var(--nav-hamberger-height) + var(--nav-hamberger-padding) * 2);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	cursor: pointer;
+
+	opacity: 0;
+}
+
+#hamburger-toggler:checked ~ #hamburger > div {
+	transform: translateY(-50%) rotateZ(45deg);
+}
+
+#hamburger-toggler:checked ~ #hamburger > div::before {
+	top: 0px;
+	transform: rotateZ(90deg);
+}
+
+#hamburger-toggler:checked ~ #hamburger > div::after {
+	opacity: 0;
+}
+
+#hamburger-toggler:checked + #nav-background {
+	width: var(--nav-background-width);
+}
+
+#hamburger-toggler:checked ~ #nav-list {
+	width: var(--nav-list-width);
+}
+
+#nav-background {
+	width: calc(var(--nav-hamberger-width) + var(--nav-hamberger-padding) * 2);
+	height: calc(var(--nav-hamberger-height) + var(--nav-hamberger-padding) * 2);
+
+	border-radius: var(--nav-background-border-radous);
+
+	background: var(--nav-background);
+	transition: var(--nav-hamberger-animation);
+}
+
+#hamburger {
+	display: inline-block;
+
+	width: var(--nav-hamberger-width);
+	height: var(--nav-hamberger-height);
+
+	position: absolute;
+	top: var(--nav-hamberger-padding);
+	left: var(--nav-hamberger-padding);
+
+	padding: var(--nav-hamberger-inner-padding);
+}
+
+#hamburger > div {
+	position: relative;
+
+	width: 100%;
+	height: var(--nav-hamberger-slice-size);
+
+	top: 50%;
+	transform: translateY(-50%);
+
+	background-color: white;
+
+	transition: all 0.4s linear 0.6s;
+}
+
+#hamburger > div::before,
+#hamburger > div::after {
+	content: " ";
+
+	width: 100%;
+	height: var(--nav-hamberger-slice-size);
+
+	position: absolute;
+	top: calc(var(--nav-hamberger-slice-gap) * -1);
+
+	background-color: inherit;
+
+	transition: var(--nav-hamberger-psudo-animation);
+}
+
+#hamburger > div::after {
+	top: var(--nav-hamberger-slice-gap);
+}
+
+#nav-list {
+	display: grid;
+	grid-template-columns: repeat(5, max-content);
+	place-items: center;
+	width: 0;
+	height: var(--nav-list-height);
+
+	position: absolute;
+	top: var(--nav-list-padding);
+	left: calc(var(--nav-hamberger-width) + var(--nav-hamberger-padding) * 2 + var(--nav-list-padding));
+
+	list-style: none;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: all 0.4s linear;
+}
+
+#nav-list li {
+	display: inline-block;
+	padding: var(--nav-list-item-padding);
+}
+
+#nav-list a {
+	text-decoration: none;
+}
+
+#nav #logout-div {
+	position: absolute;
+	right: 0px;
+	bottom: 0;
+
+	width: 50px;
+	height: 50px;
+
+	padding: 5px;
+
+	background: #474a48;
+	border: 2px solid #912f40;
+	border-radius: 2px;
+	border-right: none;
+	border-top-right-radius: unset;
+	border-bottom-right-radius: unset;
+}
+
+#nav #logout-div a {
+	height: 100%;
+	width: 100%;
+}
+
+#nav #logout-div img{
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,117 @@
+#edit {
+	display: grid;
+
+	grid-template-rows: auto auto auto;
+}
+
+#edit-question-form {
+	grid-row: 1/2;
+}
+
+#edit-question-form .question-title {
+	display: grid;
+}
+
+#edit-question-form .edit-response {
+	height: 100%;
+
+	display: grid;
+	grid-template-columns: auto 40px;
+}
+
+#edit-question-form .edit-response > span {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}
+
+#edit-question-form .edit-response .edit-delete-button {
+	background: #474a48;
+	box-shadow: 0 0 5px 1px #191716;
+
+	padding: 10px;
+	border: none;
+}
+
+#edit-question-form .edit-response .edit-delete-button > div {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#edit-question-form .edit-response .edit-delete-button > div::before,
+#edit-question-form .edit-response .edit-delete-button > div::after {
+	content: "";
+	display: block;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 5px;
+	height: 100%;
+	background: #d4dbd4;
+}
+
+#edit-question-form .edit-response .edit-delete-button > div::before {
+	transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+}
+
+#edit-question-form .edit-response .edit-delete-button > div::after {
+	transform: translateX(-50%) translateY(-50%) rotateZ(-45deg);
+}
+
+#edit-add-response-form {
+	grid-row: 3/4;
+
+	height: 60px;
+	width: 100%;
+
+	padding: 10px;
+
+	background: #191716;
+	color: #d4dbd4;
+
+	display: flex;
+	flex-flow: row;
+}
+
+#edit-add-response-form label {
+	display: flex;
+	align-items: center;
+
+	margin-right: 10px;
+
+	font-size: 1.5em;
+}
+
+#edit-add-response-form input {
+	flex-grow: 1;
+}
+
+#edit-add-response-form .btn {
+	width: 200px;
+	height: 40px;
+
+	margin: 0 10px;
+}
+
+#edit-bottom-div {
+	grid-row: 3/4;
+
+	background: #474a48;
+	box-shadow: 0 0 0 1px #912f40;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#edit-bottom-div > .btn {
+	margin: 0 10px;
+
+	background: #191716;
+	--btn-border-background-first: #191716;
+
+	box-shadow: 0 0 5px #912f40;
+}
