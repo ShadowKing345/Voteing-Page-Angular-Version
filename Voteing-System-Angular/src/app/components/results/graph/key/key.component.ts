@@ -5,7 +5,6 @@ import { KeyItem } from "../../results.component";
 @Component({
 	selector: "app-graph-key",
 	templateUrl: "./key.component.html",
-	styleUrls: ["./key.component.css"],
 })
 export class KeyComponent implements OnInit, AfterViewInit {
 	@Input() key: KeyItem;

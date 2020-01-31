@@ -4,7 +4,6 @@ import { ResponseItem } from "src/app/model/responseItem";
 @Component({
 	selector: "app-edit-response-item",
 	templateUrl: "./edit-response-item.component.html",
-	styleUrls: ["./edit-response-item.component.css"],
 })
 export class EditResponseItemComponent implements OnInit {
 	@Input() response: ResponseItem;

@@ -9,7 +9,6 @@ export class AlertItem {
 @Component({
 	selector: "app-alert-item",
 	templateUrl: "./alert-item.component.html",
-	styleUrls: ["./alert-item.component.css"],
 })
 export class AlertItemComponent implements OnInit {
 	@Input() alert: AlertItem;

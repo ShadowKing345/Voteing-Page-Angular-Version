@@ -4,7 +4,6 @@ import { KeyItem } from "../../results.component";
 @Component({
 	selector: "app-graph-element",
 	templateUrl: "./element.component.html",
-	styleUrls: ["./element.component.css"],
 })
 export class ElementComponent implements OnInit {
 	@Input() key: KeyItem;

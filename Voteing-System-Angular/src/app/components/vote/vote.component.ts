@@ -8,7 +8,6 @@ import { AlertItem } from "../layouts/alerts/alert-item/alert-item.component";
 @Component({
 	selector: "app-vote",
 	templateUrl: "./vote.component.html",
-	styleUrls: ["./vote.component.css"],
 })
 export class VoteComponent implements OnInit {
 	@Output() networkError: EventEmitter<any> = new EventEmitter();
